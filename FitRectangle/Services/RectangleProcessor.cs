@@ -20,6 +20,10 @@ namespace FitRectangle.Services
             _logger = logger;
         }
 
+
+        /// <summary>
+        /// Filters secondary rectangles (removes according to parameters), refits MainRectangle to encapsulate all remaining rectangles.
+        /// </summary>
         public ProcessResults ProcessRectangles()
         {
             var filteredRectangles = FilterRectangles(_parameters.SecondaryRectangles);

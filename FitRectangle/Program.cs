@@ -5,6 +5,8 @@ using Color = FitRectangle.Models.Color;
 using FitRectangle.Services;
 using FitRectangle.Helpers;
 
+// Just for initial testing purposes. See FitRectangleUnitTests.
+
 var parameters = new TaskParameters
 {
     MainRectangle = new Rectangle(new Point(0, 0), new Point(0, 10), new Point(10, 10), new Point(10, 0)),
@@ -15,8 +17,8 @@ var parameters = new TaskParameters
         new Rectangle(new Point(4, 5), new Point(4, 6), new Point(6, 6), new Point(6, 5), Color.Green),
         new Rectangle(new Point(3, 3), new Point(3, 10), new Point(15, 10), new Point(15, 3), Color.Pink),
     },
-    ExcludeOutsidePoints = true,
-    ExcludedColors = new List<Color> { Color.Purple, Color.Green }
+    ExcludeOutsidePoints = true, // All rectangles that are not whithin the original MainRectangle will be excluded.
+    ExcludedColors = new List<Color> { Color.Purple }
 };
 
 var processor = new RectangleProcessor(parameters, new ConsoleLogger());
